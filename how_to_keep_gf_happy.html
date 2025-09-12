@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Where Should You Take Your Girlfriend</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f7f7f7; padding: 40px; }
+        h1 { color: #d6054e; }
+        form { background: #fff; padding: 24px; border-radius: 8px; max-width: 600px; margin: auto; box-shadow: 0 2px 8px rgba(0,0,0,0.1);}
+        label { display: block; margin-top: 18px; font-weight: bold; }
+        .question { margin-bottom: 16px; }
+        button { margin-top: 24px; padding: 10px 24px; background: #d6336c; color: #fff; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #d6054e; }
+        .response { margin-top: 10px; color: #222222; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Where Should You Take Your Girlfriend</h1>
+    <form id="gfForm" onsubmit="return showSuggestions();">
+        <div class="question">
+            <label>Does she like going to the movies?</label>
+            <input type="radio" name="movies" value="yes" id="movies-yes"><label for="movies-yes">Yes</label>
+            <input type="radio" name="movies" value="no" id="movies-no"><label for="movies-no">No</label>
+        </div>
+        <div class="question">
+            <label>Does she enjoy visiting parks?</label>
+            <input type="radio" name="parks" value="yes" id="parks-yes"><label for="parks-yes">Yes</label>
+            <input type="radio" name="parks" value="no" id="parks-no"><label for="parks-no">No</label>
+        </div>
+        <div class="question">
+            <label>Does she like going to restaurants?</label>
+            <input type="radio" name="restaurants" value="yes" id="restaurants-yes"><label for="restaurants-yes">Yes</label>
+            <input type="radio" name="restaurants" value="no" id="restaurants-no"><label for="restaurants-no">No</label>
+        </div>
+        <div class="question">
+            <label>Does she enjoy shopping at malls?</label>
+            <input type="radio" name="malls" value="yes" id="malls-yes"><label for="malls-yes">Yes</label>
+            <input type="radio" name="malls" value="no" id="malls-no"><label for="malls-no">No</label>
+        </div>
+        <div class="question">
+            <label>Does she like going to concerts or live events?</label>
+            <input type="radio" name="concerts" value="yes" id="concerts-yes"><label for="concerts-yes">Yes</label>
+            <input type="radio" name="concerts" value="no" id="concerts-no"><label for="concerts-no">No</label>
+        </div>
+        <button type="submit">Get Suggestions</button>
+        <div id="suggestion" class="response"></div>
+    </form>
+    <script>
+        function showSuggestions() {
+            let suggestion = "Suggestions: ";
+            let found = false;
+
+            if (document.getElementById('movies-yes').checked) {
+                suggestion += "Take her to the movies. ";
+                found = true;
+            }
+            if (document.getElementById('parks-yes').checked) {
+                suggestion += "Go for a walk in the park. ";
+                found = true;
+            }
+            if (document.getElementById('restaurants-yes').checked) {
+                suggestion += "Dine out at her favorite restaurant. ";
+                found = true;
+            }
+            if (document.getElementById('malls-yes').checked) {
+                suggestion += "Go shopping at the mall. ";
+                found = true;
+            }
+            if (document.getElementById('concerts-yes').checked) {
+                suggestion += "Attend a concert together. ";
+                found = true;
+            }
+            if (!found) {
+                suggestion = "Try asking her what she'd like to do. ";
+            }
+
+            document.getElementById('suggestion').textContent = suggestion;
+            return false;//Prevent form submission
+        }
+    </script>
+</body>
+</html>
