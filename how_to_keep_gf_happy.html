@@ -19,28 +19,28 @@
     <form id="gfForm" onsubmit="return showSuggestions();">
         <div class="question">
             <label>Does she like going to the movies?</label>
-            <input type="radio" name="movies" value="yes" id="movies-yes"><label for="movies-yes">Yes</label>
-            <input type="radio" name="movies" value="no" id="movies-no"><label for="movies-no">No</label>
+            <label><input type="radio" name="movies" value="yes"> Yes</label>
+            <label><input type="radio" name="movies" value="no"> No</label>
         </div>
         <div class="question">
             <label>Does she enjoy visiting parks?</label>
-            <input type="radio" name="parks" value="yes" id="parks-yes"><label for="parks-yes">Yes</label>
-            <input type="radio" name="parks" value="no" id="parks-no"><label for="parks-no">No</label>
+            <label><input type="radio" name="parks" value="yes"> Yes</label>
+            <label><input type="radio" name="parks" value="no"> No</label>
         </div>
         <div class="question">
             <label>Does she like going to restaurants?</label>
-            <input type="radio" name="restaurants" value="yes" id="restaurants-yes"><label for="restaurants-yes">Yes</label>
-            <input type="radio" name="restaurants" value="no" id="restaurants-no"><label for="restaurants-no">No</label>
+            <label><input type="radio" name="restaurants" value="yes"> Yes</label>
+            <label><input type="radio" name="restaurants" value="no"> No</label>
         </div>
         <div class="question">
             <label>Does she enjoy shopping at malls?</label>
-            <input type="radio" name="malls" value="yes" id="malls-yes"><label for="malls-yes">Yes</label>
-            <input type="radio" name="malls" value="no" id="malls-no"><label for="malls-no">No</label>
+            <label><input type="radio" name="malls" value="yes"> Yes</label>
+            <label><input type="radio" name="malls" value="no"> No</label>
         </div>
         <div class="question">
             <label>Does she like going to concerts or live events?</label>
-            <input type="radio" name="concerts" value="yes" id="concerts-yes"><label for="concerts-yes">Yes</label>
-            <input type="radio" name="concerts" value="no" id="concerts-no"><label for="concerts-no">No</label>
+            <label><input type="radio" name="concerts" value="yes"> Yes</label>
+            <label><input type="radio" name="concerts" value="no"> No</label>
         </div>
         <button type="submit">Get Suggestions</button>
         <div id="suggestion" class="response"></div>
@@ -50,23 +50,23 @@
             let suggestion = "Suggestions: ";
             let found = false;
 
-            if (document.getElementById('movies-yes').checked) {
+            if (document.querySelector('input[name="movies"]:checked')?.value === 'yes') {
                 suggestion += "Take her to the movies. ";
                 found = true;
             }
-            if (document.getElementById('parks-yes').checked) {
+            if (document.querySelector('input[name="parks"]:checked')?.value === 'yes') {
                 suggestion += "Go for a walk in the park. ";
                 found = true;
             }
-            if (document.getElementById('restaurants-yes').checked) {
+            if (document.querySelector('input[name="restaurants"]:checked')?.value === 'yes') {
                 suggestion += "Dine out at her favorite restaurant. ";
                 found = true;
             }
-            if (document.getElementById('malls-yes').checked) {
+            if (document.querySelector('input[name="malls"]:checked')?.value === 'yes') {
                 suggestion += "Go shopping at the mall. ";
                 found = true;
             }
-            if (document.getElementById('concerts-yes').checked) {
+            if (document.querySelector('input[name="concerts"]:checked')?.value === 'yes') {
                 suggestion += "Attend a concert together. ";
                 found = true;
             }
@@ -75,7 +75,7 @@
             }
 
             document.getElementById('suggestion').textContent = suggestion;
-            return false;//Prevent form submission
+            return false; // Prevent form submission
         }
     </script>
 </body>
